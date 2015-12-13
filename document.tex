@@ -1,0 +1,87 @@
+%%This is a very basic article template.
+%%There is just one section and two subsections.
+\documentclass[a4paper]{article}
+\usepackage{a4wide}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Probability and Statistics for Data Analysis\\Assignment 1}
+\author{Charalampos Kaidos}
+
+\maketitle
+
+\begin{enumerate}
+
+  \item Assume that $A$ and $B$ are events of the sample space $S$ for which we
+  know: $2P(A)-P(A')=3/5$, $P(B|A)=5/8$, $P(A|B)=4/9$. Calculate the following
+  probabilities:
+    \begin{enumerate}
+      \item $P(A)$
+        \begin{align}
+          2P(A)-P(A')=3/5& \Leftrightarrow 2P(A)-(1-P(A))=3/5 \nonumber\\
+          & \Leftrightarrow 2P(A)-1+P(A)=3/5 \nonumber\\
+          & \Leftrightarrow 3P(A)=8/5 \nonumber\\
+          & \Leftrightarrow P(A)=8/15
+        \end{align}
+      \item $P(A\cap B)$
+        \begin{align}
+          P(B|A)=\frac{P(A\cap B)}{P(A)}& \Leftrightarrow P(A\cap
+          B)=P(B|A)P(A) \nonumber \\
+          & \Leftrightarrow P(A\cap B)=5/8\times8/15=1/3
+        \end{align}
+      \item $P(B)$
+        \begin{align}
+          P(A|B)=\frac{P(A\cap B)}{P(B)}& \Leftrightarrow P(B)=\frac{P(A\cap
+          B)}{P(A|B)}=\frac{1/3}{4/9}=9/12=3/4
+        \end{align}
+      \item $P(A\cup B)$
+        \begin{align}
+          P(A\cup B)=P(A)+P(B)-P(A\cap B)=8/15+3/4-1/3=171/180
+        \end{align}
+      \item Are the events $A$ and $B$ independent? \\
+      Two events $A$ and $B$ are independent if $P(A\cap B)=P(A)P(B)$. For our
+      problem:
+      $$P(A)P(B)=8/15\times3/4=2/5\neq P(A\cap B)$$
+      Thus the events $A$ and $B$ are not independent.
+    \end{enumerate}
+  \item Suppose that a sample space $S$ has $n$ elements. Prove that the number
+  of subsets that can be formed from the elements of $S$ is $2^n$.
+  \item Two players, A and B, alternatively and independently flip a coin and
+  the first player to obtain a head wins. Assume player A flips first.
+    \begin{enumerate}
+      \item If the coin is fair, what is the probability that player A wins?
+      \item More generally assume that $P(\text{head})=p$ (not necessarily
+      $1/2$). What is the probability that player A wins?
+      \item Show that $\forall p$ such that $0<p<1$, we have that $P(A\text{
+      wins})>1/2$.
+    \end{enumerate}
+  \item A telegraph signals ``dot'' and ``dash'' sent in the proportion $3 : 4$,
+  where erratic transmission cause a dot to become dash with probability $1/4$
+  and a dash to become a dot with probability $1/3$.
+    \begin{enumerate}
+      \item If a dash is received, what is the probability that a dash has been
+      sent?
+      \item Assuming independence between signals, if the message dot-dot was
+      received, what is the probability distribution of the four possible
+      messages that could have been sent?
+    \end{enumerate}
+  \item Let $X$ be a continuous random variable with pdf $f(x)$ and cdf $F(x)$.
+  For a fixed number $x_0$ (such that $F(x_0)<1$), define the function:
+    \begin{align} g(x)=
+      \begin{cases}
+        \frac{f(x)}{1-F(x_0)} \quad &x\geq x_0 \\
+        0 \quad &x<x_0
+      \end{cases}
+    \end{align}
+  Prove that $g(x)$ is a pdf (also known as hazard function).
+  \item A truncated discrete distribution is one in which a particular class
+  cannot be observed and is eliminated from the sample space. In particular, if
+  $X$ has range $0,1,2,\ldots$ and the $0$ class cannot be observed (as is
+  usually the case), the $0$-truncated random variable $X_T$ has pmf:
+  $$P(X_T=x)=\frac{P(X=x)}{P(X>0)}, \quad x=1,2,\ldots$$
+  Find the pmf, mean and variance of the $0$-truncated $Poisson(\lambda)$ random
+  variable.
+\end{enumerate}
+
+\end{document}
